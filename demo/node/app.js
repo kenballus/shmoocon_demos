@@ -9,7 +9,7 @@ require("http")
           );
         } else {
           response.end(
-            '<!DOCTYPE html><html lang="en"><body>Served up by Node.js</body></html>\n',
+            '<!DOCTYPE html>\n<html lang="en">\n  <body>\n    Served up by Node.js\n  </body>\n</html>\n',
           );
         }
       });
