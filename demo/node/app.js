@@ -1,12 +1,17 @@
-require('http').createServer((request, response) => {
-    let body = [];
-    request.on('data', (chunk) => {
-        body.push(chunk);
-    }).on('end', () => {
-        response.end(JSON.stringify({
-            "uri": request.url.toString(),
-            "method": request.method,
-        }));
-        console.log(`Got a ${request.method} request for ${request.url.toString()}`);
-    });
-}).listen(80);
+require("http")
+  .createServer((request, response) => {
+    request
+      .on("data", (_) => {})
+      .on("end", () => {
+        if (request.method == "DELETE") {
+          response.end(
+            `Now deleting ${request.url.toString()} ...\nHope nothing too important was there :)\n`,
+          );
+        } else {
+          response.end(
+            '<!DOCTYPE html><html lang="en"><body>Served up by Node.js</body></html>\n',
+          );
+        }
+      });
+  })
+  .listen(80);

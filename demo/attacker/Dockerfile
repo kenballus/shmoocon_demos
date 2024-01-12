@@ -1,6 +1,6 @@
 FROM kenballus/http-garden-soil:latest
 
-RUN apt -y install zsh zsh-syntax-highlighting firefox-esr wget
+RUN apt -y install zsh zsh-syntax-highlighting wget
 
 RUN chsh -s /usr/bin/zsh
 COPY zshrc /root/.zshrc
