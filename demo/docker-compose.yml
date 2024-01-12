@@ -1,0 +1,30 @@
+version: '3'
+services:
+  ats:
+    build:
+      context: "./ats"
+      args:
+        BACKEND: "node"
+
+  haproxy:
+    depends_on: ["litespeed"]
+    build:
+      context: "./haproxy"
+      args:
+        BACKEND: "litespeed:8088"
+
+  litespeed:
+    build:
+      context: "./litespeed"
+
+  mongoose:
+    build:
+      context: "./mongoose"
+
+  node:
+    build:
+      context: "./node"
+
+  attacker:
+    build:
+      context: "./attacker"

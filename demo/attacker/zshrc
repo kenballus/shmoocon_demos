@@ -1,0 +1,34 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename "/home/${USER}/.zshrc"
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+autoload -Uz colors && colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}%b "
+
+bindkey "\e[H"  beginning-of-line
+bindkey "\e[F"  end-of-line
+bindkey "\e[3~" delete-char
+
+alias grep='grep --color=auto'
+alias diff='diff --color'
+alias mkdir='mkdir --parents --verbose'
+alias ls='ls --color=always --classify -C'
+
+# Defaults
+export SHELL="zsh"
+
+# Misc
+export LC_ALL="en_US.UTF-8"
+export XDG_CONFIG_HOME="$HOME/.config"
+
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

