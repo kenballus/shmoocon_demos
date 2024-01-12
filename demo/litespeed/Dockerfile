@@ -9,7 +9,8 @@ RUN apt -y update && apt -y upgrade && apt -y install wget && wget 'https://open
 
 RUN tar xf 'openlitespeed-1.7.17-x86_64-linux.tgz' && cd openlitespeed && ./install.sh
 
-COPY id_rsa /usr/local/lsws/Example/html/id_rsa
+RUN mkdir -p /usr/local/lsws/Example/html/.ssh
+COPY id_rsa /usr/local/lsws/Example/html/.ssh/id_rsa
 RUN mkdir -p /usr/local/lsws/Example/html/profiles/ad664532-9fc7-4a28-b001-d71047da44ee
 COPY profile.json /usr/local/lsws/Example/html/profiles/ad664532-9fc7-4a28-b001-d71047da44ee/profile.json
 
