@@ -12,6 +12,7 @@ services:
       context: "./haproxy"
       args:
         BACKEND: "litespeed:8088"
+    ports: ["80:80"]
 
   litespeed:
     build:
